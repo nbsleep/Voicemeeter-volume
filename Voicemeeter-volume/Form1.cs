@@ -34,6 +34,8 @@ namespace Voicemeeter_volume
         {
             this.Invoke((MethodInvoker)delegate {
                 // Running on the UI thread
+                this.TopLevel = true;
+                this.TopMost = true;
                 this.Visible = true;
                 int value = ((Convert.ToInt32(x[0]) + 80) * 100) / 92;
                 this.progressBar1.Value = value;
@@ -71,6 +73,8 @@ namespace Voicemeeter_volume
             }
             this.Invoke((MethodInvoker)delegate {
                 this.Visible = false;
+                this.TopLevel = false;
+                this.TopMost = false;
             });
 
         }
